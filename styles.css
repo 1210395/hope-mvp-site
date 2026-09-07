@@ -5,8 +5,11 @@ button, input { font:inherit; }
 button { cursor:pointer; }
 .app-shell { min-height:100vh; display:grid; grid-template-columns:250px minmax(0,1fr); }
 .sidebar { background:#203720; color:white; padding:34px 24px; display:flex; flex-direction:column; position:sticky; top:0; height:100vh; }
-.brand { color:#fff; text-decoration:none; font-weight:800; letter-spacing:.08em; display:flex; align-items:center; gap:10px; }
-.leaf { width:28px; height:28px; display:grid; place-items:center; border-radius:12px 3px 12px 3px; background:#dbe8c9; color:#244421; font-size:22px; transform:rotate(-20deg); }
+.brand { color:#fff; text-decoration:none; font-weight:800; letter-spacing:.08em; display:flex; flex-direction:column; align-items:stretch; gap:10px; }
+/* The mark is two dark inks; on the dark sidebar it needs its own light ground. */
+.brand-plate { background:#f7f7f2; border-radius:10px; padding:11px 13px; }
+.brand-plate img { display:block; width:100%; height:auto; }
+.brand-name { font-size:13px; }
 .product-line { color:#c7d7bd; font-size:13px; margin:10px 0 38px; }
 nav { display:grid; gap:6px; }
 .nav-item { color:#e6eee1; text-align:left; border:0; background:transparent; padding:11px 12px; border-radius:8px; font-size:14px; }
