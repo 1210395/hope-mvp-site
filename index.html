@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hope | Context before debate</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#top" aria-label="Hope home">
+          <span class="leaf" aria-hidden="true">⌁</span>
+          <span>HOPE</span>
+        </a>
+        <p class="product-line">Context before debate</p>
+
+        <nav aria-label="Product sections">
+          <button class="nav-item active" data-view="compare">Compare coverage</button>
+          <button class="nav-item" data-view="context">Context notes</button>
+          <button class="nav-item" data-view="pod">Protected pod</button>
+          <button class="nav-item" data-view="verify">Verify sources</button>
+        </nav>
+
+        <div class="safety-card">
+          <span class="shield" aria-hidden="true">✓</span>
+          <div>
+            <strong>Protected conversation</strong>
+            <p>Invite-only. Moderated. No public profiles.</p>
+          </div>
+        </div>
+        <p class="demo-note">Illustrative demo scenario. It is not live reporting.</p>
+      </aside>
+
+      <main id="top">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">DEMO SCENARIO</p>
+            <h1>One event, different frames</h1>
+          </div>
+          <button id="startPod" class="primary-button">Join protected pod <span>→</span></button>
+        </header>
+
+        <section class="scenario-bar" aria-label="Scenario summary">
+          <span class="status-dot"></span>
+          <span><strong>Illustrative scenario:</strong> A temporary change to a shared crossing’s opening hours</span>
+          <button id="showSources" class="text-button">View source record</button>
+        </section>
+
+        <section id="compare" class="view active-view">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">STEP 1</p>
+              <h2>Compare coverage</h2>
+            </div>
+            <p>Read each frame without deciding which one is “the whole story.”</p>
+          </div>
+
+          <div class="coverage-grid">
+            <article class="coverage-card israeli">
+              <div class="source-header"><span class="source-mark">I</span><div><p>Israeli outlet</p><span>Illustrative summary</span></div></div>
+              <h3>“New hours aim to improve security checks”</h3>
+              <p>The report centers on safety procedures, staffing, and delays for people traveling to work. Officials describe the change as temporary while operations are reviewed.</p>
+              <button class="context-trigger" data-context="security">Why this wording matters <span>+</span></button>
+              <div class="frame-tags"><span>security</span><span>commute</span><span>temporary</span></div>
+            </article>
+
+            <article class="coverage-card palestinian">
+              <div class="source-header"><span class="source-mark">P</span><div><p>Palestinian outlet</p><span>Illustrative summary</span></div></div>
+              <h3>“Reduced access disrupts daily life”</h3>
+              <p>The report centers on lost work hours, family access, and uncertainty for people who depend on predictable crossings. Residents ask when normal access will return.</p>
+              <button class="context-trigger" data-context="access">Why this wording matters <span>+</span></button>
+              <div class="frame-tags"><span>access</span><span>family</span><span>uncertainty</span></div>
+            </article>
+          </div>
+
+          <div class="reflection-panel">
+            <div><span class="step-number">01</span><h3>Pause before you react</h3><p>Both summaries describe the same operational change. Their priorities differ.</p></div>
+            <button id="openContext" class="secondary-button">Read shared context</button>
+          </div>
+        </section>
+
+        <section id="context" class="view">
+          <div class="section-heading"><div><p class="eyebrow">STEP 2</p><h2>Context notes</h2></div><p>Context adds information. It does not tell participants what to believe.</p></div>
+          <div class="context-layout">
+            <article class="context-card">
+              <span class="context-label">SHARED CONTEXT</span>
+              <h3>Different lived stakes can be true at the same time</h3>
+              <p>A temporary operational measure may feel like a safety response to one audience and an immediate loss of mobility to another. The experience depends on who travels, who waits, and what alternatives are available.</p>
+              <dl>
+                <div><dt>What to ask</dt><dd>Who is affected, for how long, and what information would reduce uncertainty?</dd></div>
+                <div><dt>What to avoid</dt><dd>Turning one headline into a claim about an entire community’s motives.</dd></div>
+              </dl>
+            </article>
+            <article class="citation-card">
+              <p class="eyebrow">SOURCE RECORD</p>
+
+              <ul>
+                <li>Israeli outlet summary — illustrative, not live reporting.</li>
+                <li>Palestinian outlet summary — illustrative, not live reporting.</li>
+                <li>Operational notice describing the change as temporary.</li>
+              </ul>
+              <button class="secondary-button" data-view-link="verify">Open the source record</button>
+            </article>
+          </div>
+        </section>
+
+        <section id="pod" class="view">
+          <div class="section-heading"><div><p class="eyebrow">STEP 3</p><h2>Protected pod</h2></div><p>Invite-only and moderated. Questions are welcome; group blame is not.</p></div>
+          <div class="pod-layout">
+            <article class="pod-card">
+              <div class="pod-header">
+                <div><h3>Crossing hours · 6 participants</h3><p>Moderated by a trained volunteer</p></div>
+                <span class="live-tag">LIVE</span>
+              </div>
+
+              <div class="messages" id="messages">
+                <div class="message moderator"><span class="avatar gold">M</span><div><strong>Moderator</strong><p>Welcome. Ask about the situation, not about each other. Reports go to a human reviewer.</p></div></div>
+                <div class="message other"><span class="avatar">A</span><div><strong>Participant A</strong><p>My commute doubled this week. Does anyone know how long “temporary” is meant to be?</p></div></div>
+                <div class="message other"><span class="avatar teal">B</span><div><strong>Participant B</strong><p>The notice I saw didn’t give an end date. That uncertainty is the hardest part.</p></div></div>
+              </div>
+
+              <form class="message-form" id="messageForm">
+                <label class="sr-only" for="messageInput">Message</label>
+                <input id="messageInput" type="text" autocomplete="off" placeholder="Ask a specific question about the scenario" />
+                <button class="primary-button" type="submit">Send</button>
+              </form>
+              <p class="form-hint" id="messageHint">Sent to this protected pod. A moderator can review any report.</p>
+            </article>
+
+            <aside class="guidelines-card">
+              <h3>Pod guidelines</h3>
+              <ol>
+                <li>Ask about the event, not about a group.</li>
+                <li>Say what you don’t know.</li>
+                <li>Cite the source record when you make a claim.</li>
+                <li>Report anything that targets a person or a people.</li>
+              </ol>
+              <button id="reportButton" class="report-button" type="button">Report a message</button>
+            </aside>
+          </div>
+        </section>
+
+        <section id="verify" class="view">
+          <div class="section-heading"><div><p class="eyebrow">STEP 4</p><h2>Verify sources</h2></div><p>Every claim in the scenario carries its own status, openly.</p></div>
+          <article class="ledger-card">
+            <div class="ledger-row ledger-header"><span>Claim</span><span>Basis</span><span>Status</span></div>
+            <div class="ledger-row"><span>Opening hours changed this week</span><span>Published operational notice</span><span class="verified">Verified</span></div>
+            <div class="ledger-row"><span>The change is temporary</span><span>Officials quoted in both summaries</span><span class="review">In review</span></div>
+            <div class="ledger-row"><span>Commute times roughly doubled</span><span>Participant accounts in the pod</span><span class="review">In review</span></div>
+            <div class="ledger-row"><span>An end date has been announced</span><span>No supporting source found</span><span class="review">Unsupported</span></div>
+          </article>
+          <div class="verification-footer">
+            <button id="markChecked" class="secondary-button" type="button">Mark scenario reviewed</button>
+            <p>Status can change. Re-checking a claim is normal, not an admission of failure.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
