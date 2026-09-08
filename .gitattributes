@@ -1,0 +1,3 @@
+# Build output: keep it byte-exact, never touch line endings.
+assets/** -text
+index.html -text
